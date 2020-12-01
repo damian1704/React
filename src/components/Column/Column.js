@@ -7,7 +7,7 @@ import { settings } from '../../data/dataStore';
 import Icon from '../Icon/Icon.js';
 
 class Column extends React.Component {
-	state = {
+  state = {
     cards: this.props.cards || [],
   }
 
@@ -19,43 +19,48 @@ class Column extends React.Component {
   }
 
    static defaultProps = {
-      icon: settings.defaultColumnIcon,
-    }
+     icon: settings.defaultColumnIcon,
+   }
 
-  addCard(title){
-    this.setState(state => (
-      {
-        columns: [
-          ...state.columns,
-          {
-            key: state.columns.length ? state.columns[state.columns.length-1].key+1 : 0,
-            title,
-            icon: 'list-alt',
-            cards: []
-          }
-        ]
-      }
-    ));
-  }  
+   addCard(title){
+     this.setState(state => (
+       {
+         columns: [
+           ...state.columns,
+           {
+             key: state.columns.length ? state.columns[state.columns.length-1].key+1 : 0,
+             title,
+             icon: 'list-alt',
+             cards: [],
+           },
+         ],
+       }
+     ));
+   }  
   
-  render() {
-  	const {title, icon, cards, addCard} = this.props;
+   render() {
+     const {title, icon, cards} = this.props;
 
-    return (
-      <section className={styles.component}>
-        <h3 className={styles.title}>
-          <span className={styles.icon}>
-            <Icon name={icon}/>
-          </span> 
-            {title}
-        </h3>
-        <div className={styles.creator}>
-          <Creator text={settings.cardCreatorText} action={title => this.addCard(title)}/>
-        </div>
+     return (
+       <section className={styles.component}>
+         <h3 className={styles.title}>
+           <span className={styles.icon}>
+             <Icon name={icon}/>
+           </span> 
+           {title}
+         </h3>
+         <div>
+           {cards.map(cardData => (
+             <Card key={cardData.id} {...cardData} />
+           ))}
+         </div>
+         <div className={styles.creator}>
+           <Creator text={settings.cardCreatorText} action={title => this.addCard(title)}/>
+         </div>
         
-      </section>
-    )
-  }
+       </section>
+     );
+   }
 }
 
 export default Column;
