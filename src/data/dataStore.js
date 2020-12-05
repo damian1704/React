@@ -13,6 +13,7 @@ export const settings = {
   defaultListDescription: '<p>I can do all the things!!!</p>',
   defaultColumnIcon: 'list-alt',
   defaultImage: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
+  
 };
 
 export const pageContents = {
@@ -73,6 +74,17 @@ export const listData = {
   ],
 };
 
+export const InfoData = {
+  title: 'Information',
+  image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
+  content: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+};
+
+export const FAQData = {
+  title: 'Frequently Asked Questions',
+  image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
+  content: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+};
 const lists = [
   {
     id: 'list-1',
