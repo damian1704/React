@@ -8,9 +8,6 @@ import Container from '../Container/Container';
 
 class SearchResults extends React.Component {
       
-  constructor (props) {
-    super (props);
-  }
 
     static propTypes = {
       title: PropTypes.node,
