@@ -13,7 +13,7 @@ class SearchResults extends React.Component {
       title: PropTypes.node,
       cards: PropTypes.array,
       icon: PropTypes.node,
-      searchText: PropTypes.func,
+      addCard: PropTypes.func,
     }
 
     static defaultProps = {
